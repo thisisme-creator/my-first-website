@@ -1,34 +1,142 @@
-#hi {
-
-   color: aliceblue;
+.container {
   display: flex;
-  justify-content: center; 
-  align-items: center;      
-  height: 50vh;           
-  margin: 0;
+  flex-wrap: wrap;     
+  gap: 20px;            
+  padding: 20px;
+  justify-content: center;
+  border: 2px dashed transparent; 
+  
 }
-body{
- background-color: rgb(4, 0, 8);
-}
-.press-start-2p-regular {
-  font-family: "Press Start 2P", system-ui;
+.project {
+  flex: 1 1 250px;       
+  height: 180px;         
+  border-radius: 10px;
+  text-align: center;
+  line-height: 180px;    
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-style: normal;
+
+
+  background: rgba(0, 0, 0, 0.05);
 }
 
-.montserrat-name {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700; 
-  font-style: normal;
+body {
+  font-family: 'Poppins', sans-serif;
 }
-#p1 {
-  position: absolute;   
-  top: 10px;            
-  right: 60px;         
-  color: azure;
-  
+h1, h2, #H1 ,H2 {
+  font-family: 'Montserrat', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
-@keyframes identifier {
-  
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
 }
+
+header{
+    position:absolute;
+    top:40px;
+    left:100px;
+    letter-spacing: 2px;
+    word-spacing: 50px;
+}
+
+#profile {
+ text-align: right;  
+ position: relative;
+}
+#profile img {
+  border-radius: 10%;
+  position: absolute;  
+  right:150px;         
+  top: 100px;          
+  width: 30%; 
+}
+#profile1 {
+  position: absolute;
+  right: 250px;     
+  top: 620px;       
+  text-align: center;
+}
+
+
+.intro-box {
+  position: relative;  
+  border: 2px dashed transparent;  
+  padding: 20px;
+}
+
+#H1{
+  font-size: 30px;
+  position: absolute;  
+  left:100px;        
+  top: 150px;          
+}
+#H2{
+  font-size: 50px;
+  position: absolute;  
+  left:100px;        
+  top: 200px;          
+}
+#P1{
+  position: absolute;  
+  left:100px;        
+  top: 300px; 
+}
+
+
+.myButton {
+  background-color: #ffffff; 
+  border: none;
+  color: rgb(4, 4, 4);
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  border: 2px solid #000000;
+  border-radius: 6px;
+
+  position: absolute;  
+  left:100px;        
+  top: 420px; 
+}
+.myButton:hover {
+  background-color: #aeaeae; 
+}
+
+.myButton1 {
+  background-color: #ffffff; 
+  border: none;
+  color: rgb(4, 4, 4);
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  border: 2px solid #000000;
+  border-radius: 6px;
+
+  position: absolute;  
+  left:250px;        
+  top: 420px;  
+}
+.myButton1:hover {
+  background-color: #aeaeae; 
+}
+
+section {
+  min-height: 100vh;              
+  border: 2px dashed transparent; 
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+
