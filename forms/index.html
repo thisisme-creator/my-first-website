@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+
+  <style>
+    .error {
+      border: 2px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="loginform">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" placeholder="Enter your username" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="pwd" name="password" placeholder="Enter your password" required>
+    <button type="button" onclick="togglePwd()">Show/Hide</button><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+    <button type="submit">Login</button>
+
+    <p>Choose your role:</p>
+    <input type="radio" id="student" name="role" value="student">
+    <label for="student">Student</label>
+    <input type="radio" id="teacher" name="role" value="teacher">
+    <label for="teacher">Teacher</label><br><br>
+
+    <p>Select your interest:</p>
+    <input type="checkbox" id="html" name="interest" value="HTML">
+    <label for="html">HTML</label>
+    <input type="checkbox" id="css" name="interest" value="CSS">
+    <label for="css">CSS</label><br><br>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+      <option value="ph">Philippines</option>
+      <option value="us">United States</option>
+      <option value="jp">Japan</option>
+    </select><br><br>
+
+    <label for="message">Your Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+
+    <input type="text" name="username" required minlength="3" maxlength="10"><br><br>
+
+    <textarea id="bio" maxlength="100"></textarea>
+    <p id="count">0/100</p>
+  </form>
+
+
+  <script>
+   
+    document.getElementById("loginform").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Form Submitted!");
+    });
+
+    function togglePwd() {
+      const pwd = document.getElementById("pwd");
+      pwd.type = pwd.type === "password" ? "text" : "password";
+    }
+
+    
+    const bio = document.getElementById("bio");
+    const count = document.getElementById("count");
+
+    bio.addEventListener("input", function() {
+      count.textContent = bio.value.length + "/100";
+    });
+  </script>
+
+  <script>
+    $("#login").submit(function(e) {
+      e.preventDefault();
+      if ($("#user").val() === "" || $("#pass").val() === "") {
+        alert("Please fill in all fields");
+      } else {
+        alert("Login successful!");
+      }
+    });
+
+    $("#formcheck").submit(function(e) {
+      e.preventDefault();
+      if ($("#name").val() === "") {
+        $("#name").addClass("error");
+      } else {
+        $("#name").removeClass("error");
+        alert("Form submitted!");
+      }
+    });
+  </script>
+</body>
+</html>
