@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript & jQuery Exercises</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    div, p, img, input, button {
+      margin: 10px 0;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+    #box, #panel {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript & jQuery Exercises</h1>
+
+  <p id="demo">Original Text</p>
+  <button id="btn1">Change Text</button>
+
+  <div id="box"></div>
+  <button id="btn2">Change Background</button>
+
+  <p id="demo3">Hide this paragraph</p>
+  <button id="btn3">Hide</button>
+
+  <p id="demo4" style="display:none;">Now visible!</p>
+  <button id="btn4">Show</button>
+
+  <p id="demo5">Toggle me</p>
+  <button id="btn5">Toggle</button>
+
+  <p id="demo6">Watch my style</p>
+  <button id="btn6">Add Class</button>
+  <button id="btn7">Remove Class</button>
+  <button id="btn8">Toggle Class</button>
+
+  <img id="myImg" src="https://via.placeholder.com/100" alt="placeholder">
+  <button id="btn9">Change Image</button>
+
+  <input type="text" id="name" placeholder="Type something...">
+  <button id="btn10">Get Value</button>
+
+  <button id="btn11">Set Value</button>
+
+  <p id="demo12">Original text.</p>
+  <button id="btn12">Append</button>
+  <button id="btn13">Prepend</button>
+
+  <div id="box2" style="background: lightgreen; width: 200px; height: 100px;"></div>
+  <button id="btn14">Fade Out</button>
+  <button id="btn15">Fade In</button>
+
+  <div id="panel" style="background: lightcoral;">Slide Panel</div>
+  <button id="btn16">Slide Up</button>
+  <button id="btn17">Slide Down</button>
+
+  <p id="demo18">Change my colors</p>
+  <button id="btn18">Change CSS</button>
+
+  <p id="demo19">Hover over me</p>
+
+  <p id="demo20">Click me!</p>
+
+  <script>
+    $("#btn1").click(function(){
+      $("#demo").text("Hello jQuery!");
+    });
+
+    $("#btn2").click(function(){
+      $("#box").css("background-color", "lightblue");
+    });
+
+    $("#btn3").click(function(){
+      $("#demo3").hide();
+    });
+
+    $("#btn4").click(function(){
+      $("#demo4").show();
+    });
+
+    $("#btn5").click(function(){
+      $("#demo5").toggle();
+    });
+
+    $("#btn6").click(function(){
+      $("#demo6").addClass("highlight");
+    });
+
+    $("#btn7").click(function(){
+      $("#demo6").removeClass("highlight");
+    });
+
+    $("#btn8").click(function(){
+      $("#demo6").toggleClass("highlight");
+    });
+
+    $("#btn9").click(function(){
+      $("#myImg").attr("src", "https://via.placeholder.com/150");
+    });
+
+    $("#btn10").click(function(){
+      let val = $("#name").val();
+      alert("Input value: " + val);
+    });
+
+    $("#btn11").click(function(){
+      $("#name").val("John Doe");
+    });
+
+    $("#btn12").click(function(){
+      $("#demo12").append(" Extra text!");
+    });
+
+    $("#btn13").click(function(){
+      $("#demo12").prepend("Start ");
+    });
+
+    $("#btn14").click(function(){
+      $("#box2").fadeOut();
+    });
+
+    $("#btn15").click(function(){
+      $("#box2").fadeIn();
+    });
+
+    $("#btn16").click(function(){
+      $("#panel").slideUp();
+    });
+
+    $("#btn17").click(function(){
+      $("#panel").slideDown();
+    });
+
+    $("#btn18").click(function(){
+      $("#demo18").css({
+        "color": "white",
+        "background-color": "black"
+      });
+    });
+
+    $("#demo19").mouseover(function(){
+      $(this).css("color", "red");
+    });
+
+    $("#demo20").click(function(){
+      $(this).text("You clicked me!");
+    });
+  </script>
+
+</body>
+</html>
