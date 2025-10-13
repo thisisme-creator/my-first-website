@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works — Ruvic M. Paclita</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+   header {
+  position: absolute;
+  top: 40px;
+  left: 400px;
+  transform: translateX(-50%);
+  z-index: 100;
+  border-radius: 10px;
+  padding: 10px 50px;
+  background-color: #6f317d2e;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(4, 4, 4, 0.1);
+  border: 1px solid #333;
+  box-sizing: border-box;
+  max-width: 90%;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+header nav a {
+  position: relative;
+  padding: 5px;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s, transform 0.3s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+header nav a.active {
+  color: #ff6ec7;
+}
+
+header nav a.active::after {
+  background: linear-gradient(90deg, #ff6ec7, #5b84ff);
+  transform: scaleX(1);
+}
+
+header {
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #ffdcf2, 0 0 20px rgba(91,132,255,0.4);
+}
+
+header:after {
+  content: '';
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: -100%;
+  background: rgba(255,255,255,0.1);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.showcase {
+  padding: 120px 40px 60px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.category {
+  margin-bottom: 80px;
+}
+
+.category h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px #5b84ff;
+  margin-bottom: 25px;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.showcase-item {
+  display: block;
+  width: 100%;
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 110, 199, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.showcase-item img,
+.showcase-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px #ff6ec7, 0 0 35px rgba(91,132,255,0.4);
+}
+
+.fullscreen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.fullscreen:target {
+  display: flex;
+}
+
+.fullscreen img,
+.fullscreen video {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.fullscreen .close {
+  position: absolute;
+  inset: 0;
+  display: block;
+  content: "";
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <header class="black-bg">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="works.html" class="active">Work</a>
+    </nav>
+  </header>
+
+  <main class="showcase">
+    <section class="category">
+      <h2>3D Art & Animation</h2>
+      <div class="showcase-grid">
+        <a href="#img1" class="showcase-item"><img src="/image/3d model/3.jpg" alt=""></a>
+        <a href="#img2" class="showcase-item"><img src="/image/3d model/10.jpg" alt=""></a>
+        <a href="#img3" class="showcase-item"><img src="/image/3d model/3dcity.jpg" alt=""></a>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Video Editing & Motion Graphics</h2>
+      <div class="showcase-grid">
+        <a href="#vid1" class="showcase-item">
+          <video autoplay muted loop playsinline>
+            <source src="/vids/D'TRIO_final.mp4" type="video/mp4">
+          </video>
+        </a>
+        <a href="#vid2" class="showcase-item">
+          <video autoplay muted loop playsinline>
+            <source src="/vids/1206.mp4" type="video/mp4">
+          </video>
+        </a>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>2D Digital Art & Illustration</h2>
+      <div class="showcase-grid">
+        <a href="#img4" class="showcase-item"><img src="/image/scene 6.png" alt=""></a>
+        <a href="#img5" class="showcase-item"><img src="/image/download (1).jpg" alt=""></a>
+        <a href="#img6" class="showcase-item"><img src="/image/download.jpg" alt=""></a>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>UI/UX Design Basics</h2>
+      <div class="showcase-grid">
+        <a href="#img7" class="showcase-item"><img src="/image/Albay Padaba - Figma 10_13_2025 8_59_26 PM.png" alt=""></a>
+        <a href="#img8" class="showcase-item"><img src="/image/Albay Padaba - Figma 10_13_2025 9_00_04 PM.png" alt=""></a>
+      </div>
+    </section>
+  </main>
+
+  <div id="img1" class="fullscreen"><a href="#" class="close"></a><img src="/image/3d model/3.jpg" alt=""></div>
+  <div id="img2" class="fullscreen"><a href="#" class="close"></a><img src="/image/3d model/10.jpg" alt=""></div>
+  <div id="img3" class="fullscreen"><a href="#" class="close"></a><img src="/image/3d model/3dcity.jpg" alt=""></div>
+
+  <div id="vid1" class="fullscreen"><a href="#" class="close"></a><video autoplay muted controls><source src="/vids/D'TRIO_final.mp4" type="video/mp4"></video></div>
+  <div id="vid2" class="fullscreen"><a href="#" class="close"></a><video autoplay muted controls><source src="/vids/1206.mp4" type="video/mp4"></video></div>
+
+  <div id="img4" class="fullscreen"><a href="#" class="close"></a><img src="/image/scene 6.png" alt=""></div>
+  <div id="img5" class="fullscreen"><a href="#" class="close"></a><img src="/image/download (1).jpg" alt=""></div>
+  <div id="img6" class="fullscreen"><a href="#" class="close"></a><img src="/image/download.jpg" alt=""></div>
+  <div id="img7" class="fullscreen"><a href="#" class="close"></a><img src="/image/Albay Padaba - Figma 10_13_2025 8_59_26 PM.png" alt=""></div>
+  <div id="img8" class="fullscreen"><a href="#" class="close"></a><img src="/image/Albay Padaba - Figma 10_13_2025 9_00_04 PM.png" alt=""></div>
+</body>
+</html>
