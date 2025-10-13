@@ -6,89 +6,324 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <title>Ruvic M. Paclita — Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <style>
+header {
+  position: absolute;
+  top: 40px;
+  left: 400px;
+  transform: translateX(-50%);
+  z-index: 100;
+  border-radius: 10px;
+  padding: 10px 50px;
+  background-color: #6f317d2e;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(4, 4, 4, 0.1);
+  border: 1px solid #333;
+  box-sizing: border-box;
+  max-width: 90%;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+header nav a {
+  position: relative;
+  padding: 5px;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s, transform 0.3s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+header nav a.active {
+  color: #ff6ec7;
+}
+
+header nav a.active::after {
+  background: linear-gradient(90deg, #ff6ec7, #5b84ff);
+  transform: scaleX(1);
+}
+
+header {
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #ffdcf2, 0 0 20px rgba(91,132,255,0.4);
+}
+
+header:after {
+  content: '';
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  top: 0; 
+  left: -100%;
+  background: rgba(255,255,255,0.1);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+#span1 {
+  font-size: 50px;
+  background: linear-gradient(90deg, #ff6ec7, #5b84ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#H1 {
+  font-size: 30px;
+}
+
+#H2 {
+  font-size: 65px;
+  position: relative;
+  top: -50px;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 70px #ff6ec730, 0 0 90px #ff6ec742;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 70px #5b84ff22, 0 0 90px #5b84ff35;
+  }
+}
+
+#P1 {
+  position: relative;
+  top: -60px;
+}
+
+#H2-PROJECT {
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  padding: 10px 50px;
+  background-color: #6f317d2e;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(4, 4, 4, 0.1);
+  border: 1px solid #333;
+  box-sizing: border-box;
+  max-width: 90%;
+}
+
+.project img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.project video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.project:hover video {
+  opacity: 100;
+  transform: scale(1.05);
+}
+
+.project:hover img {
+  opacity: 100;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  background-color: #333;
+  color: #fff;
+}
+
+footer .contact-info {
+  margin-bottom: 20px;
+}
+
+footer .contact-info h3 {
+  color: #fff;
+  margin-top: 0;
+}
+
+footer .contact-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+section {
+  min-height: 100vh;
+  border: 2px dashed transparent;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  min-height: 100vh;
+  border: 2px dashed transparent;
+  box-sizing: border-box;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+</style>
 </head>
 <body>
-  <header>
+<div class="background">
+   <span></span><span></span><span></span><span></span><span></span>
+   <span></span><span></span><span></span><span></span><span></span>
+   <span></span><span></span><span></span><span></span><span></span>
+   <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<div class="page-1">
+  <header class="black-bg">
     <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="/pages/index.html" class="active">Home</a>
+      <a href="/pages/about.html">About</a>
+      <a href="/pages/works.html">Work</a>
     </nav>
   </header>
 
-  <div class="page">
-    <section id="profile">
-      <div id="profile1">
-        <h1>Ruvic M. Paclita</h1>
-        <p>3D Artist | Video Editor | 2D Artist</p>
-      </div>
-      <img src="/image/ruvic_profilen.jpg" width="30%">
-    </section>
-  
-   
-<div class="intro-container">
-  <section id="intro">
-    <h2 id="H1">HI I'M RUVIC PACLITA</h2><br>
-    <p id="P1"> I'm a BSIT Animation student who loves 3D art, video editing, and 2D design. <br> 
-              I enjoy blending creativity with technology to bring ideas to life. <br>   
-              Where imagination transforms into pixels and frames.  
-    </p>
-    <h1 id="H2">MULTIMEDIA ARTIST</h1>
+  <section id="profile">
+    <div id="profile1">
+      <h1>Ruvic M. Paclita</h1>
+      <p>3D Artist | Video Editor | 2D Artist</p>
+    </div>
+    <img src="/image/ruvic_profilen.jpg" width="30%">
   </section>
 
-  <button class="myButton">Hire Me</button>
-  <button class="myButton1">Projects</button>
-</div>
-
-  
-
-  
-  <div class="page">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hi! I'm Ruvic, a BSIT Animation student who loves 3D art, video editing, and 2D design. 
-        I enjoy mixing creativity with technology to bring ideas to life.
+  <div class="intro-container">
+    <section id="intro">
+      <h2 id="H1"><span id="span2">HI I'M</span>
+      <span id="span1"> RUVIC PACLITA </span></h2>
+      <h1 id="H2">MULTIMEDIA ARTIST</h1>
+      <p id="P1">
+        I'm a BSIT Animation student who loves 3D art, video editing, and 2D design. <br>
+        I enjoy blending creativity with technology to bring ideas to life. <br>
+        Where imagination transforms into pixels and frames.
       </p>
-    </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>3D Art & Animation</li>
-        <li>Video Editing</li>
-        <li>2D Digital Art</li>
-      </ul>
-    </section>
-  </div>
-
-  
-  <div class="page">
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="container">
-        <div class="project">Output 1</div>
-        <div class="project">Output 2</div>
-        <div class="project">Output 3</div>
-        <div class="project">Output 4</div>
+      <div class="button-group">
+        <a href="#contact-footer" class="myButton">Hire Me</a>
+        <a href="/pages/works.html" class="myButton1">Projects</a>
       </div>
     </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:ruvicpaclita26@gmail.com">ruvicpaclita26@gmail.com</a></p>
-      <p>Phone: <a href="tel:09666525874">09666525874</a></p>
-      <p>Facebook: <a href="https://www.facebook.com/jgnlx66yks" target="_blank">My Profile</a></p>
-    </section>
   </div>
+</div>
 
-  <footer>
+<div class="page">
+  <section id="projects">
+    <div class="project-header">
+      <h2 id="H2-PROJECT">Selected Projects</h2>
+      <a href="/pages/works.html" class="view-more">
+        View More <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="container">
+      <div class="project project-1">
+        <img src="/image/3d model/3dcity.jpg" alt="3D Art & Animation">
+        <h2>3D Art & Animation</h2>
+      </div>
+
+      <div class="project project-2">
+        <video autoplay muted loop playsinline>
+          <source src="/vids/D'TRIO_final.mp4" type="video/mp4">
+        </video>
+        <img src="/image/thumbnail_vid.png" alt="Video Editing Thumbnail">
+        <h2>Video Editing & Motion Graphics</h2>
+      </div>
+
+      <div class="project project-3">
+        <h2>2D Digital Art & Illustration</h2>
+        <img src="/image/scene 6.png" alt="2D Digital Art & Illustration">
+      </div>
+
+      <div class="project project-4">
+        <img src="/image/Albay Padaba - Figma 10_13_2025 9_00_04 PM.png" alt="UI/UX Design Basics">
+        <h2>UI/UX Design Basics</h2>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="work-with-me">
+  <div class="work-with-me-box">
+    <span class="work-text">Interested in working together?</span>
+    <a href="mailto:ruvicpaclita@gmail.com" class="message-box" aria-label="Send me an email">
+      <span>Send me a message</span>
+      <i class="fas fa-paper-plane"></i>
+    </a>
+  </div>
+</section>
+
+<footer id="contact-footer">
+  <div class="contact-info">
+    <h3>Contact</h3>
+    <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ruvicpaclita26@gmail.com" target="_blank">ruvicpaclita26@gmail.com</a></p>
+  </div>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/jgnlx66yks" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ruvicpaclita26@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+  </div>
+  <div class="footer-bottom">
     <p>© 2025 Ruvic M. Paclita</p>
-  </footer>
+  </div>
+</footer>
 </body>
-
 </html>
-
-
-
